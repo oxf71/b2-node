@@ -7,10 +7,10 @@ on:
       - "ci"
     tags:
       - "v*.*.*"
-  # pull_request:
-  #   branches:
-  #     - "main"
-  #     - "ci"
+  pull_request:
+    branches:
+      - "main"
+      - "ci"
 
 jobs:
   docker:
