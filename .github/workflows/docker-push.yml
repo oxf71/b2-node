@@ -3,7 +3,8 @@ name: Push to Docker Hub
 on:
   push:
     branches:
-      - "**"
+      - "main"
+      - "ci"
     tags:
       - "v*.*.*"
   pull_request:
