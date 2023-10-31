@@ -15,6 +15,8 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest
+    env:
+      REPO_NAME: ${GITHUB_REPOSITORY#$GITHUB_REPOSITORY_OWNER/}
     steps:
       -
         name: Checkout
@@ -29,7 +31,7 @@ jobs:
         with:
           # list of Docker images to use as base name for tags
           images: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/b2-node
+            ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.REPO_NAME }}
             ghcr.io/${{ github.repository }}
 
           # generate Docker tags based on the following events/attributes
