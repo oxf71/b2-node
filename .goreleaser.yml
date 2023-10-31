@@ -107,3 +107,38 @@ changelog:
     - '^test:'
 snapshot:
   name_template: "{{ .Tag }}-next"
+dockers:
+  - image_templates:
+      - bsquarednetwork/{{ .ProjectName }}:{{ .Version }}-amd64
+    dockerfile: Dockerfile
+    use: buildx
+    goarch: amd64
+    ids:
+      - ethermintd-linux-amd64
+    build_flag_templates:
+      - --platform=linux/amd64
+    skip_push: false
+
+  - image_templates:
+      - bsquarednetwork/{{ .ProjectName }}:{{ .Version }}-arm64
+    dockerfile: Dockerfile
+    use: buildx
+    goarch: arm64
+    ids:
+      - ethermintd-linux-arm64
+    build_flag_templates:
+      - --platform=linux/arm64
+    skip_push: false
+
+docker_manifests:
+  - name_template: bsquarednetwork/{{ .ProjectName }}:{{ .Version }}
+    image_templates:
+      - bsquarednetwork/{{ .ProjectName }}:{{ .Version }}-amd64
+      - bsquarednetwork/{{ .ProjectName }}:{{ .Version }}-arm64
+    skip_push: false
+
+  - name_template: bsquarednetwork/{{ .ProjectName }}:latest
+    image_templates:
+      - bsquarednetwork/{{ .ProjectName }}:{{ .Version }}-amd64
+      - bsquarednetwork/{{ .ProjectName }}:{{ .Version }}-arm64
+    skip_push: auto
