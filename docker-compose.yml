@@ -68,7 +68,6 @@ services:
     networks:
       - localnet
     entrypoint: "bash start-docker.sh"
-    
 
 networks:
   localnet:
