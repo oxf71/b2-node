@@ -91,7 +91,7 @@ jobs:
       - uses: cachix/install-nix-action@v20
       - uses: cachix/cachix-action@v12
         with:
-          name: ethermint
+          name: b2-node
           signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
       - uses: technote-space/get-diff-action@v6.1.2
         with:
@@ -126,7 +126,7 @@ jobs:
       - uses: cachix/install-nix-action@v20
       - uses: cachix/cachix-action@v12
         with:
-          name: ethermint
+          name: b2-node
           signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
       - name: 'instantiate integration test env'
         run: nix-store -r "$(nix-instantiate tests/integration_tests/shell.nix)"
