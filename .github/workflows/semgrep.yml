@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - ci_test
     paths:
       - .github/workflows/semgrep.yml
   schedule:
