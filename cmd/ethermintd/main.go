@@ -36,7 +36,6 @@ func main() {
 		switch e := err.(type) {
 		case server.ErrorCode:
 			os.Exit(e.Code)
-
 			
 		default:
 			os.Exit(1)
