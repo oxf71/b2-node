@@ -205,6 +205,7 @@ var (
 type EthermintApp struct {
 	*baseapp.BaseApp
 
+	
 	// encoding
 	cdc               *codec.LegacyAmino
 	appCodec          codec.Codec
