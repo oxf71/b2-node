@@ -210,6 +210,7 @@ type EthermintApp struct {
 	appCodec          codec.Codec
 	interfaceRegistry types.InterfaceRegistry
 
+	
 	invCheckPeriod uint
 
 	// keys to access the substores
