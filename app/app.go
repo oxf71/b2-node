@@ -179,6 +179,7 @@ var (
 		evm.AppModuleBasic{},
 		feemarket.AppModuleBasic{},
 	)
+	
 
 	// module account permissions
 	maccPerms = map[string][]string{
