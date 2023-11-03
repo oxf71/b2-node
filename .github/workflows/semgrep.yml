@@ -16,7 +16,7 @@ jobs:
     name: Scan
     runs-on: ubuntu-latest
     container:
-      image: returntocorp/semgrep
+      image: returntocorp/semgrep:1.47.0
     if: (github.actor != 'dependabot[bot]')
     steps:
       - name: Permission issue fix
