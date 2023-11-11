@@ -48,7 +48,7 @@ issues:
 
 linters-settings:
   lll:
-    line-length: 150
+    line-length: 200
   dogsled:
     max-blank-identifiers: 3
   golint:
