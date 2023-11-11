@@ -1,9 +1,9 @@
 package bitcoinindexer
 
 import (
+	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/evmos/ethermint/x/bitcoinindexer/keeper"
 	"github.com/evmos/ethermint/x/bitcoinindexer/types"
-	sdk "github.com/cosmos/cosmos-sdk/types"
 )
 
 // InitGenesis initializes the module's state from a provided genesis state.
