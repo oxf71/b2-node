@@ -20,5 +20,9 @@
                 // "b2network_102-11"
             ]
         }
-    ]
+    ],
+    "go.lintTool":"golangci-lint",
+"go.lintFlags": [
+  "--fast"
+]
 }
