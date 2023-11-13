@@ -1,0 +1,7 @@
+syntax = "proto3";
+package ethermint.bitcoincommiter.v1;
+
+option go_package = "github.com/evmos/ethermint/x/bitcoincommiter/types";
+
+// Msg defines the Msg service.
+service Msg {}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+package ethermint.bitcoincommiter.v1;
+
+import "gogoproto/gogo.proto";
+
+option go_package = "github.com/evmos/ethermint/x/bitcoincommiter/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (gogoproto.goproto_stringer) = false;
+  
+}
