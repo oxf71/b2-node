@@ -34,6 +34,7 @@ comment:
   layout: "reach, diff, files"
   behavior: default # update if exists else create new
   require_changes: true
+  hide_project_coverage: true
 
 flags:
   app:
