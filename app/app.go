@@ -195,7 +195,7 @@ var (
 		govtypes.ModuleName:            {authtypes.Burner},
 		ibctransfertypes.ModuleName:    {authtypes.Minter, authtypes.Burner},
 		evmtypes.ModuleName:            {authtypes.Minter, authtypes.Burner}, // used for secure addition and subtraction of balance using module account
-		// bitcoinindexertypes.ModuleName: nil, // bitcoinindexer permission is undetermined
+		bitcoinindexertypes.ModuleName: {authtypes.Minter, authtypes.Burner}, // bitcoinindexer permission is undetermined
 	}
 
 	// module accounts that are allowed to receive tokens
