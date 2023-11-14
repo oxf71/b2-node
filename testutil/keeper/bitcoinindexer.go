@@ -38,7 +38,7 @@ func BitcoinindexerKeeper(t testing.TB) (*keeper.Keeper, sdk.Context) {
 	)
 	k := keeper.NewKeeper(
 		cdc,
-		storeKey,
+		// storeKey,
 		memStoreKey,
 		paramsSubspace,
 	)
