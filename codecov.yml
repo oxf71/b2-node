@@ -31,9 +31,10 @@ coverage:
     changes: false
 
 comment:
-  layout: "reach, diff, files"
+  layout: "newheader, files, newfooter"
   behavior: default # update if exists else create new
   require_changes: true
+  hide_project_coverage: true
 
 flags:
   app:
