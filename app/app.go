@@ -301,7 +301,7 @@ func NewEthermintApp(
 		// ethermint keys
 		evmtypes.StoreKey, feemarkettypes.StoreKey,
 		// bitcoin keys
-		bitcoinindexertypes.StoreKey,
+		// bitcoinindexertypes.StoreKey,
 	)
 
 	// Add the EVM transient store key
@@ -487,7 +487,7 @@ func NewEthermintApp(
 	// Create bitcoinindexer keeper
 	app.BitcoinindexerKeeper = *bitcoinindexerkeeper.NewKeeper(
 		appCodec,
-		keys[bitcoinindexertypes.StoreKey],
+		// keys[bitcoinindexertypes.StoreKey],
 		keys[bitcoinindexertypes.MemStoreKey],
 		app.GetSubspace(bitcoinindexertypes.ModuleName),
 	)
