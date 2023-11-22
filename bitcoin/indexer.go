@@ -160,5 +160,6 @@ func (b *Indexer) BlockChainInfo() (*btcjson.GetBlockChainInfoResult, error) {
 
 // BlockChainInfoHight get block chain hight info
 func (b *Indexer) BlockChainInfoHight() (*btcjson.GetBlockChainInfoResult, error) {
-	return b.client.GetBlockChainInfo()
+	// TODO: after realize
+	return nil, nil
 }
