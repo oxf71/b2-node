@@ -157,3 +157,8 @@ func (b *Indexer) LatestBlock() (int64, error) {
 func (b *Indexer) BlockChainInfo() (*btcjson.GetBlockChainInfoResult, error) {
 	return b.client.GetBlockChainInfo()
 }
+
+// BlockChainInfoHight get block chain hight info
+func (b *Indexer) BlockChainInfoHight() (*btcjson.GetBlockChainInfoResult, error) {
+	return b.client.GetBlockChainInfo()
+}
