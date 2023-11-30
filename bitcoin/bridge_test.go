@@ -80,7 +80,41 @@ func TestLocalDeposit(t *testing.T) {
 
 // TestLocalBitcoinAddressToEthAddress only test in local
 func TestLocalBitcoinAddressToEthAddress(t *testing.T) {
+	bridge := bridgeWithConfig(t)
+	testCase := []struct {
+		name           string
+		bitcoinAddress string
+		ethAddress     string
+	}{
+		{
+			name:           "success: Segwit (bech32)",
+			bitcoinAddress: "tb1qjda2l5spwyv4ekwe9keddymzuxynea2m2kj0qy",
+			ethAddress:     "0x2A9E233eE5d68fD70DE6C4b1d1Ffa29256e3ee9D",
+		},
+		{
+			name:           "success: Segwit (bech32)",
+			bitcoinAddress: "bc1qf60zw2gec5qg2mk4nyjl0slnytu0s0p28k9her",
+			ethAddress:     "0x1b98017D9d6A9B62a2CFb2764D8012e28606BD49",
+		},
+		{
+			name:           "success: Legacy",
+			bitcoinAddress: "1KEFsFXrvuzMGd7Sdkwp7iTDcEcEv3GP1y",
+			ethAddress:     "0x30f789e9C889A68180ef63F37cac923D89571394",
+		},
+		{
+			name:           "success: Segwit",
+			bitcoinAddress: "3Q4g8hgbwZLZ7vA6U1Xp1UsBs7NBnC7zKS",
+			ethAddress:     "0x0aB97EA8eDff3e28867EAe9e13C02e5aA6214f59",
+		},
+	}
 
+	for _, tc := range testCase {
+		t.Run(tc.name, func(t *testing.T) {
+			ethAddress, err := bridge.BitcoinAddressToEthAddress(tc.bitcoinAddress)
+			require.NoError(t, err)
+			assert.Equal(t, tc.ethAddress, ethAddress)
+		})
+	}
 }
 
 func TestABIPack(t *testing.T) {
