@@ -70,11 +70,20 @@ type BitconConfig struct {
 }
 
 type BridgeConfig struct {
-	EthRPCURL       string `mapstructure:"eth-rpc-url"`
-	EthPrivKey      string `mapstructure:"eth-priv-key"`
+	// EthRPCURL defines the ethereum rpc url
+	EthRPCURL string `mapstructure:"eth-rpc-url"`
+	// EthPrivKey defines the invoke ethereum private key
+	EthPrivKey string `mapstructure:"eth-priv-key"`
+	// ContractAddress defines the l1 -> l2 bridge contract address
 	ContractAddress string `mapstructure:"contract-address"`
-	ABI             string `mapstructure:"abi"`
-	GasLimit        uint64 `mapstructure:"gas-limit"`
+	// ABI defines the l1 -> l2 bridge contract abi
+	ABI string `mapstructure:"abi"`
+	// GasLimit defines the  contract gas limit
+	GasLimit uint64 `mapstructure:"gas-limit"`
+	// AASCARegistry defines the  contract AASCARegistry address
+	AASCARegistry string `mapstructure:"aa-sca-registry"`
+	// AAKernelFactory defines the  contract AAKernelFactory address
+	AAKernelFactory string `mapstructure:"aa-kernel-factory"`
 }
 
 const (

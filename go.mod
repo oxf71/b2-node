@@ -6,6 +6,7 @@ require (
 	cosmossdk.io/errors v1.0.0-beta.7
 	cosmossdk.io/math v1.0.0-rc.0
 	github.com/armon/go-metrics v0.4.1
+	github.com/b2network/b2-go-aa-utils v1.0.2
 	github.com/btcsuite/btcd v0.23.4
 	github.com/btcsuite/btcd/btcec/v2 v2.3.2
 	github.com/btcsuite/btcd/btcutil v1.1.2
@@ -22,7 +23,7 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/gorilla/websocket v1.5.0
 	github.com/grpc-ecosystem/grpc-gateway v1.16.0
-	github.com/holiman/uint256 v1.2.2
+	github.com/holiman/uint256 v1.2.3
 	github.com/improbable-eng/grpc-web v0.15.0
 	github.com/onsi/ginkgo/v2 v2.9.2
 	github.com/onsi/gomega v1.27.6
@@ -33,14 +34,14 @@ require (
 	github.com/spf13/cobra v1.7.0
 	github.com/spf13/viper v1.15.0
 	github.com/status-im/keycard-go v0.2.0
-	github.com/stretchr/testify v1.8.2
+	github.com/stretchr/testify v1.8.4
 	github.com/tendermint/tendermint v0.34.27
 	github.com/tendermint/tm-db v0.6.7
 	github.com/tidwall/gjson v1.14.4
 	github.com/tidwall/sjson v1.2.5
 	github.com/tyler-smith/go-bip39 v1.1.0
-	golang.org/x/net v0.9.0
-	golang.org/x/text v0.9.0
+	golang.org/x/net v0.10.0
+	golang.org/x/text v0.13.0
 	google.golang.org/genproto v0.0.0-20230110181048-76db0878b65f
 	google.golang.org/grpc v1.54.0
 	gopkg.in/yaml.v2 v2.4.0
@@ -57,7 +58,7 @@ require (
 	filippo.io/edwards25519 v1.0.0-rc.1 // indirect
 	github.com/99designs/keyring v1.2.1 // indirect
 	github.com/ChainSafe/go-schnorrkel v0.0.0-20200405005733-88cbf1b4c40d // indirect
-	github.com/StackExchange/wmi v0.0.0-20180116203802-5d049714c4a6 // indirect
+	github.com/StackExchange/wmi v1.2.1 // indirect
 	github.com/VictoriaMetrics/fastcache v1.6.0 // indirect
 	github.com/Workiva/go-datastructures v1.0.53 // indirect
 	github.com/aead/siphash v1.0.1 // indirect
@@ -179,19 +180,19 @@ require (
 	github.com/tidwall/btree v1.5.0 // indirect
 	github.com/tidwall/match v1.1.1 // indirect
 	github.com/tidwall/pretty v1.2.0 // indirect
-	github.com/tklauser/go-sysconf v0.3.10 // indirect
-	github.com/tklauser/numcpus v0.4.0 // indirect
+	github.com/tklauser/go-sysconf v0.3.12 // indirect
+	github.com/tklauser/numcpus v0.6.1 // indirect
 	github.com/ulikunitz/xz v0.5.10 // indirect
 	github.com/zondax/hid v0.9.1 // indirect
 	github.com/zondax/ledger-go v0.14.1 // indirect
 	go.etcd.io/bbolt v1.3.6 // indirect
 	go.opencensus.io v0.24.0 // indirect
-	golang.org/x/crypto v0.5.0 // indirect
+	golang.org/x/crypto v0.14.0 // indirect
 	golang.org/x/exp v0.0.0-20230131160201-f062dba9d201 // indirect
 	golang.org/x/oauth2 v0.4.0 // indirect
-	golang.org/x/sync v0.1.0 // indirect
-	golang.org/x/sys v0.7.0 // indirect
-	golang.org/x/term v0.7.0 // indirect
+	golang.org/x/sync v0.3.0 // indirect
+	golang.org/x/sys v0.13.0 // indirect
+	golang.org/x/term v0.13.0 // indirect
 	golang.org/x/tools v0.7.0 // indirect
 	golang.org/x/xerrors v0.0.0-20220907171357-04be3eba64a2 // indirect
 	google.golang.org/api v0.107.0 // indirect

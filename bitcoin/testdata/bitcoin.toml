@@ -16,6 +16,8 @@ eth-priv-key = ""
 contract-address = "0xB457BF68D71a17Fa5030269Fb895e29e6cD2DFF2"
 abi = "abi.json"
 gas-limit = 3000
+aa-sca-registry = "0xB457BF68D71a17Fa5030269Fb895e29e6cD2DFF3"
+aa-kernel-factory = "0xB457BF68D71a17Fa5030269Fb895e29e6cD2DFF4"
 
 [evm]
 enable-listener = true
@@ -23,6 +25,5 @@ rpc-host = "http://127.0.0.1"
 rpc-port = 8545
 contract-address = "0x47549F0f902F8E0DB96aBb16E06Da60751516F54"
 start-height = 0
-deposit  = "0x01bee1bfa4116bd0440a1108ef6cb6a2f6eb9b611d8f53260aec20d39e84ee88"
+deposit = "0x01bee1bfa4116bd0440a1108ef6cb6a2f6eb9b611d8f53260aec20d39e84ee88"
 withdraw = "0xda335c6ae73006d1145bdcf9a98bc76d789b653b13fe6200e6fc4c5dd54add85"
-

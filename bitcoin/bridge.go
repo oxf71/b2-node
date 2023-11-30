@@ -10,6 +10,7 @@ import (
 	"os"
 	"path"
 
+	b2aa "github.com/b2network/b2-go-aa-utils"
 	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
@@ -26,7 +27,16 @@ type Bridge struct {
 	ContractAddress common.Address
 	ABI             string
 	GasLimit        uint64
+	// AA contract address
+	AASCARegistry   common.Address
+	AAKernelFactory common.Address
 }
+
+const (
+	B2DevRpcUrl   = "http://43.135.203.73:8123"
+	SCARegistry   = "0x231aec684Ad0e63c2F4d176EddCE97A1B666247c"
+	KernelFactory = "0x7516283Ff7090B8286E23a16f8b5b35B3ba541A2"
+)
 
 // NewBridge new bridge
 func NewBridge(bridgeCfg BridgeConfig, abiFileDir string) (*Bridge, error) {
@@ -51,6 +61,8 @@ func NewBridge(bridgeCfg BridgeConfig, abiFileDir string) (*Bridge, error) {
 		EthPrivKey:      privateKey,
 		ABI:             string(abi),
 		GasLimit:        bridgeCfg.GasLimit,
+		AASCARegistry:   common.HexToAddress(bridgeCfg.AASCARegistry),
+		AAKernelFactory: common.HexToAddress(bridgeCfg.AAKernelFactory),
 	}, nil
 }
 
@@ -142,8 +154,15 @@ func (b *Bridge) ABIPack(abiData string, method string, args ...interface{}) ([]
 }
 
 // BitcoinAddressToEthAddress bitcoin address to eth address
-// TODO: implementation
 func (b *Bridge) BitcoinAddressToEthAddress(bitcoinAddress string) (string, error) {
-	// TODO: wait aa finished
-	return bitcoinAddress, nil
+	client, err := ethclient.Dial(b.EthRPCURL)
+	if err != nil {
+		return "", err
+	}
+
+	targetEthAddress, err := b2aa.GetSCAAddress(client, b.AASCARegistry, b.AAKernelFactory, bitcoinAddress)
+	if err != nil {
+		return "", err
+	}
+	return targetEthAddress.String(), nil
 }

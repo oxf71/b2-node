@@ -33,6 +33,8 @@ func TestNewBridge(t *testing.T) {
 		EthPrivKey:      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
 		ABI:             "abi.json",
 		GasLimit:        1000000,
+		AASCARegistry:   "0x123456789abcdefgh",
+		AAKernelFactory: "0x123456789abcdefg",
 	}
 
 	bridge, err := bitcoin.NewBridge(bridgeCfg, abiPath)
@@ -42,7 +44,8 @@ func TestNewBridge(t *testing.T) {
 	assert.Equal(t, common.HexToAddress("0x123456789abcdef"), bridge.ContractAddress)
 	assert.Equal(t, privateKey, bridge.EthPrivKey)
 	assert.Equal(t, string(abi), bridge.ABI)
-	assert.Equal(t, bridgeCfg.GasLimit, bridge.GasLimit)
+	assert.Equal(t, common.HexToAddress("0x123456789abcdefgh"), bridge.AASCARegistry)
+	assert.Equal(t, common.HexToAddress("0x123456789abcdefg"), bridge.AAKernelFactory)
 }
 
 // TestLocalDeposit only test in local
@@ -73,6 +76,11 @@ func TestLocalDeposit(t *testing.T) {
 			}
 		})
 	}
+}
+
+// TestLocalBitcoinAddressToEthAddress only test in local
+func TestLocalBitcoinAddressToEthAddress(t *testing.T) {
+
 }
 
 func TestABIPack(t *testing.T) {

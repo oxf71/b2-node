@@ -26,6 +26,8 @@ func TestConfig(t *testing.T) {
 	os.Unsetenv("BITCOIN_BRIDGE_ETH_PRIV_KEY")
 	os.Unsetenv("BITCOIN_BRIDGE_ABI")
 	os.Unsetenv("BITCOIN_BRIDGE_GAS_LIMIT")
+	os.Unsetenv("BITCOIN_BRIDGE_AA_SCA_REGISTRY")
+	os.Unsetenv("BITCOIN_BRIDGE_AA_KERNEL_FACTORY")
 	config, err := bitcoin.LoadBitcoinConfig("./testdata")
 	require.NoError(t, err)
 	require.Equal(t, "signet", config.NetworkName)
@@ -42,6 +44,8 @@ func TestConfig(t *testing.T) {
 	require.Equal(t, "", config.Bridge.EthPrivKey)
 	require.Equal(t, "abi.json", config.Bridge.ABI)
 	require.Equal(t, uint64(3000), config.Bridge.GasLimit)
+	require.Equal(t, "0xB457BF68D71a17Fa5030269Fb895e29e6cD2DFF3", config.Bridge.AASCARegistry)
+	require.Equal(t, "0xB457BF68D71a17Fa5030269Fb895e29e6cD2DFF4", config.Bridge.AAKernelFactory)
 }
 
 func TestConfigEnv(t *testing.T) {
@@ -59,6 +63,8 @@ func TestConfigEnv(t *testing.T) {
 	os.Setenv("BITCOIN_BRIDGE_ETH_PRIV_KEY", "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef")
 	os.Setenv("BITCOIN_BRIDGE_ABI", "aaa.abi")
 	os.Setenv("BITCOIN_BRIDGE_GAS_LIMIT", "23333")
+	os.Setenv("BITCOIN_BRIDGE_AA_SCA_REGISTRY", "0xB457BF68D71a17Fa5030269Fb895e29e6cD2DF23")
+	os.Setenv("BITCOIN_BRIDGE_AA_KERNEL_FACTORY", "0xB457BF68D71a17Fa5030269Fb895e29e6cD2DF24")
 	config, err := bitcoin.LoadBitcoinConfig("./testdata")
 	require.NoError(t, err)
 	require.Equal(t, "testnet", config.NetworkName)
@@ -75,6 +81,8 @@ func TestConfigEnv(t *testing.T) {
 	require.Equal(t, "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef", config.Bridge.EthPrivKey)
 	require.Equal(t, "aaa.abi", config.Bridge.ABI)
 	require.Equal(t, uint64(23333), config.Bridge.GasLimit)
+	require.Equal(t, "0xB457BF68D71a17Fa5030269Fb895e29e6cD2DF23", config.Bridge.AASCARegistry)
+	require.Equal(t, "0xB457BF68D71a17Fa5030269Fb895e29e6cD2DF24", config.Bridge.AAKernelFactory)
 }
 
 func TestChainParams(t *testing.T) {
