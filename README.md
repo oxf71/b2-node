@@ -65,3 +65,8 @@ The following chat channels and forums are a great spot to ask questions about E
 
 
 
+## spec
+
+assets/{{project_name}}/{{resource}} -> https://b2-static.bsquared.network/assets/{{project_name}}/{{resource}}
+
+
