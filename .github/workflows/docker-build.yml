@@ -4,11 +4,13 @@ on:
   push:
     branches:
       - "main"
+      - "dev"
     tags:
       - "v*.*.*"
   pull_request:
     branches:
       - "main"
+      - "dev"
 
 jobs:
   docker:
@@ -24,7 +26,7 @@ jobs:
         name: Prepare
         id: prepare
         run: |
-          COMMIT_DATE=$(date +%Y%m%d-%H%M%S)
+          COMMIT_DATE='$(date +%Y%m%d-%H%M%S)'
           echo commit_date=${COMMIT_DATE} >> $GITHUB_OUTPUT
       - 
         name: Docker meta
