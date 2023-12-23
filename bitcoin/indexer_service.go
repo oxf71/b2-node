@@ -117,6 +117,11 @@ func (bis *IndexerService) OnStart() error {
 
 			if len(txResults) > 0 {
 				for _, v := range txResults {
+					// if from is listen address, skip
+					if v.From[0] == v.To {
+						bis.Logger.Info("bitcoin indexer current transaction from is listen address", "currentBlock", i, "currentTxIndex", v.Index, "data", v)
+						continue
+					}
 					hex, err := bis.bridge.Deposit(v.TxId, v.From[0], v.Value)
 					if err != nil {
 						if strings.Contains(err.Error(), ErrBrdigeDepositTxIDExist.Error()) {
